@@ -1,0 +1,9 @@
+.general {
+    background-color: #ebebeb;
+    min-height: 100vh;
+    max-width: 200vh;
+}
+
+.menu{
+    background-color: rgba(0, 0, 0, 0.9);
+}

@@ -1,28 +1,36 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FullCalendarModule } from '@fullcalendar/angular';
-import { CalendarOptions } from '@fullcalendar/core';
-import timeGridPlugin from '@fullcalendar/timegrid';
+import { Component, OnInit } from '@angular/core';
+import { LogComponent } from '../log/log.component';
+
 
 @Component({
   selector: 'app-calendario',
   standalone: true,
-  imports: [FullCalendarModule, CommonModule],
+  imports: [CommonModule, LogComponent],
   templateUrl: './calendario.component.html',
-  styleUrl: './calendario.component.css'
+  styleUrl: './calendario.component.css',
 })
-export class CalendarioComponent {
-  calendarOptions: CalendarOptions = {
-    initialView: 'timeGridWeek',
-    plugins: [timeGridPlugin],
-    dateAlignment: 'week',
-    events: [
-      // Define your events here
-    ]
-  };
+export class CalendarioComponent implements OnInit {
+  select: boolean = false;
+  fechaHoraActual: Date = new Date();
+  fechaActual: string = '';
+  horaActual: string = '';
+  total: number = 0;
+  trabajo: number = 0;
+  descanso: number = 0;
 
-  handleDateClick(arg: any) {
-    alert('Date clicked: ' + arg.dateStr);
+  constructor() {}
+
+  ngOnInit(): void {
+    this.actualizarFechaHora();
+    setInterval(() => {
+      this.actualizarFechaHora();
+    }, 1000);
+  }
+
+  private actualizarFechaHora(): void {
+    this.fechaHoraActual = new Date();
+    this.fechaActual = this.fechaHoraActual.toLocaleDateString();
+    this.horaActual = this.fechaHoraActual.toLocaleTimeString();
   }
 }
-

@@ -1,49 +1,70 @@
-<div class="position-absolute top-50 start-50 translate-middle">
-    <div class="card"  style="width: 20rem;">
-        <div></div>
-        <div class="card-body p-4">
-            @if (formLogin){
-                <h3 class="card-title text-center">Iniciar Sesi&oacute;n</h3>
-            <hr class="divider bg-dark">
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email:</label>
-                    <input type="email" class="form-control border-2 border-secondary" aria-describedby="emailHelp">
-                    <br>
-                    <label for="exampleInputPassword1" class="form-label">Contrase&ntilde;a:</label>
-                    <input type="password" class="form-control border-2 border-secondary" >
-                </div>
-                <br>
-                <div class="d-flex justify-content-around align-item-end">
-                    <button type="submit" class="btn btn-success w-50" (click)="logueo()">Iniciar</button>
-                    <a class="mt-2" (click)="cambioForm()">Registrarse</a>
-                </div>
-            </form>
-            }
-            @else {
-                <h3 class="card-title text-center">Registrarse</h3>
-            <hr class="divider bg-dark">
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label
-                    ">Email:</label>
-                    <input type="email" class="form-control border-2 border-secondary" aria-describedby="emailHelp">
-                    <br>
-                    <label for="exampleInputPassword1" class="form-label">Contrase&ntilde;a:</label>
-                    <input type="password" class="form-control border-2 border-secondary" >
-                    <br>
-                    <label for="exampleInputPassword1" class="form-label">Confirme la Contrase&ntilde;a:</label>
-                    <input type="password" class="form-control border-2 border-secondary" >
-                </div> 
-                <br>
-                <div class="d-flex justify-content-around align-item-end">
-                    <button type="submit" class="btn btn-success w-50" (click)="registro()">Registrarse</button>
-                    <a class="mt-2" (click)="cambioForm()">Iniciar Sesi&oacute;n</a>
-                </div>
-            </form>
-            }
-        
+@if (loged){
+<button type="button" class="btn btn-outline-success">Log Out</button>
+} @else {
+<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#logging">
+  Log In
+</button>
+}
+
+<!-- Modal -->
+<div class="modal fade" id="logging" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-start">
+      @if (formLogin) {
+      <div class="modal-header">
+        <div class="d-flex align-items-center">
+          <p class="modal-title fs-4 ps-4 fw-bold">Inicio de sesi&oacute;n</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+      <form>
+        <div class="modal-body">
+          <label for="exampleInputEmail1" class="form-label">Email:</label>
+          <input type="email" class="form-control border-2 border-secondary" aria-describedby="emailHelp" />
+          <br />
+          <label for="exampleInputPassword1" class="form-label">Contrase&ntilde;a:</label>
+          <input type="password" class="form-control border-2 border-secondary" />
+          <br />
+        </div>
+        <div class="modal-footer d-flex justify-content-around ps-2 pe-2">
+          <button type="submit" class="btn btn-success w-50" (click)="logueo()">
+            Iniciar
+          </button>
+          <div>
+            <button class="mt-2 btn btn-link ps-0 pe-0" (click)="cambioForm()">Registrarse</button>
+          </div>
+          
+        </div>
+      </form>
+      } @else {
+      <div class="modal-header">
+        <div class="d-flex align-items-center">
+          <p class="modal-title fs-4 ps-4 fw-bold">Registro</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+      <form>
+        <div class="modal-body">
+          <label for="exampleInputEmail1" class="form-label">Email:</label>
+          <input type="email" class="form-control border-2 border-secondary" aria-describedby="emailHelp" />
+          <br />
+          <label for="exampleInputPassword1" class="form-label">Contrase&ntilde;a:</label>
+          <input type="password" class="form-control border-2 border-secondary" />
+          <br />
+          <label for="exampleInputPassword1" class="form-label">Confirme la Contrase&ntilde;a:</label>
+          <input type="password" class="form-control border-2 border-secondary" />
+          <br />
+        </div>
+        <div class="modal-footer d-flex justify-content-around ps-2 pe-2">
+          <button type="submit" class="btn btn-success w-50" (click)="registro()">
+            Registrarse
+          </button>
+          <div>
+            <button class="mt-2 btn btn-link" (click)="cambioForm()">Iniciar Sesi&oacute;n</button>
+          </div>
+        </div>
+      </form>
+      }
     </div>
-
+  </div>
 </div>
-

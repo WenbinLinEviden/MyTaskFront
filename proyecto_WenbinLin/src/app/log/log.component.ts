@@ -13,6 +13,7 @@ import { RouterOutlet } from '@angular/router';
 
 export class LogComponent {
   formLogin: boolean = true;
+  loged: boolean = false;
 
   cambioForm(){
     if (this.formLogin)

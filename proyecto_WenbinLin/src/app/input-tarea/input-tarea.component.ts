@@ -22,6 +22,7 @@ export class InputTareaComponent {
   protected ended:string = "01:00";
   protected tipoTurno:boolean = false;
 
+  
   constructor(private tareasService: TareasService, private router: Router) { }
   ngOnInit(): void {
   }

@@ -1,6 +1,29 @@
-<div class="pt-5">
-    <div class="p-lg-5 m-lg-5 mt-lg-0 pt-lg-4 m-2 p-0 bg-light rounded-4">
-        <full-calendar [options]="calendarOptions" (dateClick)="handleDateClick($event)"></full-calendar>
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid m-2">
+    <h3 class="text-light">Hoy</h3>
+      <app-log></app-log>
+  </div>
+</nav>
+<div class="container">
+  <div class="d-flex justify-content-start mt-5 gap-5 ms-5">
+    <div class="card bg-light d-flex flex-column text-start border border-secondary">
+      <div class="card-header">
+        <p class="h4 mt-1">Hoy</p>
+      </div>
+      <div class="card-body">
+        <p class="h5 mb-0">{{ fechaActual }}</p>
+        <p class="h2 mt-0">{{ horaActual }}</p>
+      </div>
     </div>
+    <div class="card bg-light d-flex flex-column text-start border border-secondary">
+        <div class="card-header">
+          <p class="h4 mt-1">Contador</p>
+        </div>
+        <div class="card-body">
+          <p class="h5 mb-0">Total: {{total}}</p>
+          <p class="h5 mb-0">Trabajo: {{trabajo}}</p>
+          <p class="h5 mb-0">Descanso: {{descanso}}</p>
+        </div>
+      </div>
+  </div>
 </div>
-

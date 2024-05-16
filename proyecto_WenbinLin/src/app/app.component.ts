@@ -5,6 +5,7 @@ import { CalendarioComponent } from './calendario/calendario.component';
 import { HoyComponent } from './hoy/hoy.component';
 import { InputTareaComponent } from './input-tarea/input-tarea.component';
 import { RouterLinkActive } from '@angular/router';
+import { S } from '@fullcalendar/core/internal-common';
 
 
 @Component({
@@ -17,8 +18,6 @@ import { RouterLinkActive } from '@angular/router';
 })
 export class AppComponent {
   title = 'proyecto_individual_WenbinLin';
-  logged: boolean = false;
-
   constructor() {
   }
 
