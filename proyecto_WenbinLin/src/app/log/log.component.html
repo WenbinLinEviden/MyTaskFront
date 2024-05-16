@@ -1,0 +1,49 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="card"  style="width: 20rem;">
+        <div></div>
+        <div class="card-body p-4">
+            @if (formLogin){
+                <h3 class="card-title text-center">Iniciar Sesi&oacute;n</h3>
+            <hr class="divider bg-dark">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email:</label>
+                    <input type="email" class="form-control border-2 border-secondary" aria-describedby="emailHelp">
+                    <br>
+                    <label for="exampleInputPassword1" class="form-label">Contrase&ntilde;a:</label>
+                    <input type="password" class="form-control border-2 border-secondary" >
+                </div>
+                <br>
+                <div class="d-flex justify-content-around align-item-end">
+                    <button type="submit" class="btn btn-success w-50" (click)="logueo()">Iniciar</button>
+                    <a class="mt-2" (click)="cambioForm()">Registrarse</a>
+                </div>
+            </form>
+            }
+            @else {
+                <h3 class="card-title text-center">Registrarse</h3>
+            <hr class="divider bg-dark">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label
+                    ">Email:</label>
+                    <input type="email" class="form-control border-2 border-secondary" aria-describedby="emailHelp">
+                    <br>
+                    <label for="exampleInputPassword1" class="form-label">Contrase&ntilde;a:</label>
+                    <input type="password" class="form-control border-2 border-secondary" >
+                    <br>
+                    <label for="exampleInputPassword1" class="form-label">Confirme la Contrase&ntilde;a:</label>
+                    <input type="password" class="form-control border-2 border-secondary" >
+                </div> 
+                <br>
+                <div class="d-flex justify-content-around align-item-end">
+                    <button type="submit" class="btn btn-success w-50" (click)="registro()">Registrarse</button>
+                    <a class="mt-2" (click)="cambioForm()">Iniciar Sesi&oacute;n</a>
+                </div>
+            </form>
+            }
+        
+    </div>
+
+</div>
+
